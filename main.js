@@ -22,8 +22,10 @@ var keys = [];
 var events = [];
 var sprites = [];
 
-var link;
-var snake;
+var oldGuy;
+var carrot;
+var cat;
+var turtleMan;
 
 var spriteList = [];
 var currentSprite = 0;
@@ -33,14 +35,16 @@ var trans;
 function preload() {
 	map = loadImage("ortni.png");
 	
-	link = loadImage("link0.png");
-	snake = loadImage("snake.png");
+	oldGuy = loadImage("oldguy.png");
+	carrot = loadImage("carrot.png");
+	cat = loadImage("cat.png");
+	turtleMan = loadImage("turtleman.png");
 }
 
 function setup() {
 	createCanvas(400, 400);
 	
-	spriteList = [link, snake];
+	spriteList = [oldGuy, carrot, cat, turtleMan];
 	
 	trans = {
 		x: -width/2,
@@ -146,7 +150,7 @@ function keyPressed() {
 
 function keyReleased() {
 	if(keys[80]) {
-		println("Event constructors:");
+		document.writeln("Event constructors:");
 		for(var i = 0;i < events.length;i ++) {
 			var comma = ",";
 			if(i === events.length-1) {
@@ -154,13 +158,13 @@ function keyReleased() {
 			}
 			var string = "new Event(";
 			string += events[i].x + ", " + events[i].y + ", " + events[i].width + ", " + events[i].height + ", true, 0)" + comma;
-			println(string);
+			document.writeln(string);
 		}
-		println("Sprites:");
+		document.writeln("Sprites:");
 		for(var i = 0;i < sprites.length;i ++) {
 			var string = sprites[i].name() + ".draw(";
 			string += "g, " + sprites[i].x + ", " + sprites[i].y + ");";
-			println(string);
+			document.writeln(string);
 		}
 	}
 	if(eventType === "sprite" && keys[68]) {
