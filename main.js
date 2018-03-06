@@ -161,11 +161,11 @@ function keyReleased() {
 			document.write(string+"\n");
 		}
 		document.writeln("Sprites:\n");
+		document.write(sprites.length);
 		for(var i = 0;i < sprites.length;i ++) {
 			var string = sprites[i].name() + ".draw(";
 			string += "g, " + sprites[i].x + ", " + sprites[i].y + ");";
 			document.write(string+"\n");
-			documant.writeln("\nno");
 		}
 	}
 	if(eventType === "sprite" && keys[68]) {
