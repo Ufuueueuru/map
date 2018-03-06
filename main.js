@@ -42,6 +42,7 @@ function spriteFile(file) {
 	img.hide();
 	
 	spriteList.push(img);
+	image(img, 0, 0);
 }
 
 function mapFile(file) {
@@ -49,6 +50,7 @@ function mapFile(file) {
 	img.hide();
 	
 	map = img;
+	image(img, 0, 0);
 }
 
 function preload() {
