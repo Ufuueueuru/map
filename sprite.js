@@ -4,11 +4,17 @@ function Sprite(pic, x, y) {
 	this.y = y;
 	
 	this.name = function() {
-		if(this.pic === link) {
-			return "link";
+		if(this.pic === oldGuy) {
+			return "oldGuy";
 		}
-		if(this.pic === snake) {
-			return "snake";
+		if(this.pic === carrot) {
+			return "carrot";
+		}
+		if(this.pic === cat) {
+			return "cat";
+		}
+		if(this.pic === turtleMan) {
+			return "turtleMan";
 		}
 	}
 }
