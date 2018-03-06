@@ -165,6 +165,7 @@ function keyReleased() {
 			var string = sprites[i].name() + ".draw(";
 			string += "g, " + sprites[i].x + ", " + sprites[i].y + ");";
 			document.write(string+"\n");
+			documant.writeln("\nno");
 		}
 	}
 	if(eventType === "sprite" && keys[68]) {
