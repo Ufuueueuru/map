@@ -1,3 +1,5 @@
+var texting = document.getElementById("text");
+
 var map;
 
 var eventType = "none";
@@ -150,7 +152,7 @@ function keyPressed() {
 
 function keyReleased() {
 	if(keys[80]) {
-		document.write("Event constructors:<br>");
+		text.innerHTML += "Event constructors:\n";
 		for(var i = 0;i < events.length;i ++) {
 			var comma = ",";
 			if(i === events.length-1) {
@@ -158,13 +160,13 @@ function keyReleased() {
 			}
 			var string = "new Event(";
 			string += events[i].x + ", " + events[i].y + ", " + events[i].width + ", " + events[i].height + ", true, 0)" + comma;
-			document.write(string+"<br>");
+			text.innerHTML += string+"\n";
 		}
-		document.write("Sprites:<br>");
+		text.innerHTML += "Sprites:\n";
 		for(var u = 0;u < sprites.length;u ++) {
 			var string = sprites[u].name() + ".draw(";
 			string += "g, " + sprites[u].x + ", " + sprites[u].y + ");";
-			document.write(string+"<br>");
+			text.innerHTML += string+"\n";
 		}
 	}
 	if(eventType === "sprite" && keys[68]) {
