@@ -3,10 +3,27 @@
 <html>
   <head>
     <title>Map Editor</title>
+    
+    <style>
+      #div {
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        height: 100%;
+        scroll: auto;
+        width: 50%;
+        background-color: black;
+        color: white;
+      }
+    </style>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
   </head>
   <body>
-    <p id="text"></p>
+    <div id="div">
+      <h1>Output</h1>
+      <p id="text"></p>
+    </div>
     <script src="sprite.js"></script>
     <script src="event.js"></script>
     <script src="main.js"></script>
