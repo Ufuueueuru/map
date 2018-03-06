@@ -34,6 +34,23 @@ var currentSprite = 0;
 
 var trans;
 
+var mapDrop;
+var spriteDrop;
+
+function spriteFile(file) {
+	var img = createImage(file.data);
+	img.hide();
+	
+	spriteList.push(img);
+}
+
+function mapFile(file) {
+	var img = createImage(file.data);
+	img.hide();
+	
+	map = img;
+}
+
 function preload() {
 	map = loadImage("ortni.png");
 	
@@ -41,6 +58,11 @@ function preload() {
 	carrot = loadImage("carrot.png");
 	cat = loadImage("cat.png");
 	turtleMan = loadImage("turtleman.png");
+	
+	spriteDrop = select("#sprite");
+	spriteDrop.drop(spriteFile);
+	mapDrop = select("#map");
+	mapDrop.drop(mapFile);
 }
 
 function setup() {
