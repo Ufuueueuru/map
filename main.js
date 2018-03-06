@@ -158,6 +158,7 @@ function keyReleased() {
 			string += "g, " + sprites[u].x + ", " + sprites[u].y + ");";
 			texting.innerHTML += string+"<br>";
 		}
+		texting.innerHTML += "<br>";
 		texting.innerHTML += "Event constructors:<br>";
 		for(var i = 0;i < events.length;i ++) {
 			var comma = ",";
