@@ -44,11 +44,6 @@ function preload() {
 	carrot = loadImage("carrot.png");
 	cat = loadImage("cat.png");
 	turtleMan = loadImage("turtleman.png");
-	
-	spriteDrop = select("#sprite");
-	spriteDrop.drop(spriteFile);
-	mapDrop = select("#map");
-	mapDrop.drop(mapFile);
 }
 
 function setup() {
@@ -60,6 +55,11 @@ function setup() {
 		x: -width/2,
 		y: -height/2
 	}
+	
+	spriteDrop = select("#sprite");
+	spriteDrop.drop(spriteFile);
+	mapDrop = select("#map");
+	mapDrop.drop(mapFile);
 }
 
 function draw() {
