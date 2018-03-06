@@ -37,22 +37,6 @@ var trans;
 var mapDrop;
 var spriteDrop;
 
-function spriteFile(file) {
-	var img = createImage(file.data);
-	img.hide();
-	
-	spriteList.push(img);
-	image(img, 0, 0);
-}
-
-function mapFile(file) {
-	var img = createImage(file.data);
-	img.hide();
-	
-	map = img;
-	image(img, 0, 0);
-}
-
 function preload() {
 	map = loadImage("ortni.png");
 	
@@ -201,4 +185,20 @@ function keyReleased() {
 		}
 	}
 	keys[keyCode] = false;
+}
+
+function spriteFile(file) {
+	var img = createImage(file.data);
+	img.hide();
+	
+	spriteList.push(img);
+	image(img, 0, 0);
+}
+
+function mapFile(file) {
+	var img = createImage(file.data);
+	img.hide();
+	
+	map = img;
+	image(img, 0, 0);
 }
