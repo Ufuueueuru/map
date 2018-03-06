@@ -155,7 +155,7 @@ function keyReleased() {
 		texting.innerHTML = "Sprites:<br>";
 		for(var u = 0;u < sprites.length;u ++) {
 			var string = sprites[u].name() + ".draw(";
-			//string += "g, " + sprites[u].x + ", " + sprites[u].y + ");";
+			string += "g, " + sprites[u].x + ", " + sprites[u].y + ");";
 			texting.innerHTML += string+"<br>";
 		}
 		texting.innerHTML += "Event constructors:<br>";
