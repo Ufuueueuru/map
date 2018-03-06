@@ -150,7 +150,7 @@ function keyPressed() {
 
 function keyReleased() {
 	if(keys[80]) {
-		document.write("Event constructors:\n");
+		document.write("Event constructors:<br>");
 		for(var i = 0;i < events.length;i ++) {
 			var comma = ",";
 			if(i === events.length-1) {
@@ -158,14 +158,13 @@ function keyReleased() {
 			}
 			var string = "new Event(";
 			string += events[i].x + ", " + events[i].y + ", " + events[i].width + ", " + events[i].height + ", true, 0)" + comma;
-			document.write(string+"\n");
+			document.write(string+"<br>");
 		}
-		document.writeln("Sprites:\n");
-		document.write(sprites.length);
-		for(var i = 0;i < sprites.length;i ++) {
-			var string = sprites[i].name() + ".draw(";
-			string += "g, " + sprites[i].x + ", " + sprites[i].y + ");";
-			document.write(string+"\n");
+		document.write("Sprites:<br>");
+		for(var u = 0;u < sprites.length;u ++) {
+			var string = sprites[u].name() + ".draw(";
+			string += "g, " + sprites[u].x + ", " + sprites[u].y + ");";
+			document.write(string+"<br>");
 		}
 	}
 	if(eventType === "sprite" && keys[68]) {
