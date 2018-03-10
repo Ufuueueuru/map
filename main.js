@@ -188,7 +188,7 @@ function keyReleased() {
 }
 
 function spriteFile(file) {
-	var img = createImage(file.data);
+	var img = createImg(file.data);
 	img.hide();
 	
 	spriteList.push(img);
@@ -196,7 +196,7 @@ function spriteFile(file) {
 }
 
 function mapFile(file) {
-	var img = createImage(file.data);
+	var img = createImg(file.data);
 	img.hide();
 	
 	map = img;
