@@ -102,7 +102,7 @@ function draw() {
 	if(keys[RIGHT_ARROW]) {
 		trans.x --;
 	}
-	if(keys[8]) {
+	if(keys[27]) {
 		target.now = false;
 	}
 	if(keys[87] && scal < 10) {
@@ -125,28 +125,30 @@ function draw() {
 }
 
 function mouseClicked() {
-	if(eventType === "collision") {
-		if(!target.now) {
-			target.now = true;
-			target.x = mouse.x;
-			target.y = mouse.y;
-		} else {
-			if(target.width < 0) {
-				target.x += target.width+1;
-				target.width *= -1;
-				target.width -= 2;
+	if(mouseX >= 0 && mouseX <= 600 && mouseY >= 0 && mouseY <= 600) {
+		if(eventType === "collision") {
+			if(!target.now) {
+				target.now = true;
+				target.x = mouse.x;
+				target.y = mouse.y;
+			} else {
+				if(target.width < 0) {
+					target.x += target.width+1;
+					target.width *= -1;
+					target.width -= 2;
+				}
+				if(target.height < 0) {
+					target.y += target.height+1;
+					target.height *= -1;
+					target.height -= 2;
+				}
+				events.push(new Event(target.x, target.y, target.width+1, target.height+1));
+				target.now = false;
 			}
-			if(target.height < 0) {
-				target.y += target.height+1;
-				target.height *= -1;
-				target.height -= 2;
-			}
-			events.push(new Event(target.x, target.y, target.width+1, target.height+1));
-			target.now = false;
 		}
-	}
-	if(eventType === "sprite") {
-		sprites.push(new Sprite(spriteList[currentSprite], mouse.x, mouse.y));
+		if(eventType === "sprite") {
+			sprites.push(new Sprite(spriteList[currentSprite], mouse.x, mouse.y));
+		}
 	}
 }
 
