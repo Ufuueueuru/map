@@ -70,11 +70,7 @@ function draw() {
 	scale(scal);
 	translate(width/2, height/2);
 	translate(trans.x, trans.y);
-	for(var i = 0;i < width/map.width/scal;i ++) {
-		for(var u = 0;u < height/map.height/scal;u ++) {
-			image(map, u*map.width, i*map.height);
-		}
-	}
+	image(map, u*map.width, i*map.height);
 	for(var i = 0;i < sprites.length;i ++) {
 		image(sprites[i].pic, sprites[i].x, sprites[i].y);
 	}
@@ -200,5 +196,8 @@ function mapFile(file) {
 	img.hide();
 	
 	map = img;
-	image(img, 0, 0);
+	trans = {
+		x: -width/2,
+		y: -height/2
+	}
 }
