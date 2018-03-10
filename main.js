@@ -157,6 +157,9 @@ function keyPressed() {
 }
 
 function keyReleased() {
+	if(keys[90]) {
+		sprites.pop();
+	}
 	if(keys[80]) {
 		texting.innerHTML = "Sprites:<br>";
 		for(var u = 0;u < sprites.length;u ++) {
