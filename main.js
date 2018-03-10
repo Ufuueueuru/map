@@ -162,7 +162,7 @@ function keyReleased() {
 	if(keys[80]) {
 		texting.innerHTML = "Sprites:<br>";
 		for(var u = 0;u < sprites.length;u ++) {
-			var string = sprites[u].name() + ".draw(";
+			var string = "sprite.draw(";
 			string += "g, " + sprites[u].x + ", " + sprites[u].y + ");";
 			texting.innerHTML += string+"<br>";
 		}
