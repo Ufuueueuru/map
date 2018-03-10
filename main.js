@@ -158,7 +158,7 @@ function keyPressed() {
 
 function keyReleased() {
 	if(keys[90]) {
-		sprites.pop();
+		events.pop();
 	}
 	if(keys[80]) {
 		texting.innerHTML = "Sprites:<br>";
