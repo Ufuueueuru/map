@@ -70,7 +70,7 @@ function draw() {
 	scale(scal);
 	translate(width/2, height/2);
 	translate(trans.x, trans.y);
-	image(map, u*map.width, i*map.height);
+	image(map, 0, 0);
 	for(var i = 0;i < sprites.length;i ++) {
 		image(sprites[i].pic, sprites[i].x, sprites[i].y);
 	}
