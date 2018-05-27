@@ -49,6 +49,8 @@ function preload() {
 function setup() {
 	createCanvas(600, 600);
 	
+	noSmooth();
+	
 	spriteList = [oldGuy, carrot, cat, turtleMan];
 	
 	trans = {
@@ -158,7 +160,12 @@ function keyPressed() {
 
 function keyReleased() {
 	if(keys[90]) {
-		events.pop();
+		if(eventType === "collision") {
+			events.pop();
+		}
+		if(eventType === "sprite") {
+			sprites.pop();
+		}
 	}
 	if(keys[80]) {
 		texting.innerHTML = "Sprites:<br>";
