@@ -186,6 +186,25 @@ function keyReleased() {
 			texting.innerHTML += string+"<br>";
 		}
 	}
+	if(keys[69]) {
+		texting.innerHTML = "Sprites:<br>";
+		for(var u = 0;u < sprites.length;u ++) {
+			var string = "new Event(";
+			string += sprites[u].x + ", " + sprites[u].y + "),";
+			texting.innerHTML += string+"<br>";
+		}
+		texting.innerHTML += "<br>";
+		texting.innerHTML += "Event constructors:<br>";
+		for(var i = 0;i < events.length;i ++) {
+			var comma = ",";
+			if(i === events.length-1) {
+				comma = "";
+			}
+			var string = "new Event(";
+			string += events[i].x + ", " + events[i].y + ", " + events[i].width + ", " + events[i].height + ", true, 0)" + comma;
+			texting.innerHTML += string+"<br>";
+		}
+	}
 	if(eventType === "sprite" && keys[68]) {
 		currentSprite ++;
 		if(currentSprite > spriteList.length-1) {
